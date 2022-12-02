@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AoC22.Helper;
 
 namespace AoC22
 {
@@ -11,7 +7,7 @@ namespace AoC22
         private List<int> WeightGroups = new List<int>();
         private void CalculateWeights()
         {
-            string[] lines = System.IO.File.ReadAllLines("C:\\Users\\nicky\\source\\repos\\AoC22\\1\\1.txt");
+            var lines = FileReader.GetLinesFromFile("C:\\Users\\nicky\\source\\repos\\AoC22\\1\\1.txt");
 
             var groupTotal = 0;
             foreach (var line in lines)
@@ -30,15 +26,14 @@ namespace AoC22
 
         private int CalculateTopThree()
         {
-            List<int> topthree = new List<int>();
+            List<int> TopThree = new List<int>();
+            var descendingOrder = WeightGroups.OrderByDescending(i => i);
 
-            topthree.Add(WeightGroups.Max());
-            WeightGroups.Remove(WeightGroups.Max());
-            topthree.Add(WeightGroups.Max());
-            WeightGroups.Remove(WeightGroups.Max());
-            topthree.Add(WeightGroups.Max());
+            TopThree.Add(descendingOrder.ElementAt(0));
+            TopThree.Add(descendingOrder.ElementAt(1));
+            TopThree.Add(descendingOrder.ElementAt(2));
 
-            return topthree.Sum();
+            return TopThree.Sum();
         }
 
         public int Part1()
