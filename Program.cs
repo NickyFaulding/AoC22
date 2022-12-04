@@ -7,6 +7,7 @@
             Day1 day1 = new Day1();
             Day2 day2 = new Day2();
             Day3 day3 = new Day3();
+            Day4 day4 = new Day4();
 
             Console.WriteLine("*_*_*_*_*_*_ Day 1 *_*_*_*_*_*_");
             Console.WriteLine(day1.Part1());
@@ -19,6 +20,10 @@
             Console.WriteLine("\n*_*_*_*_*_*_ Day 3 *_*_*_*_*_*_");
             Console.WriteLine(day3.Part1());
             Console.WriteLine(day3.Part2());
+
+            Console.WriteLine("\n*_*_*_*_*_*_ Day 4 *_*_*_*_*_*_");
+            Console.WriteLine(day4.Part1());
+            Console.WriteLine(day4.Part2());
         }
     }
 }
